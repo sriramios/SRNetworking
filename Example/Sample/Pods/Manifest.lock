@@ -1,0 +1,16 @@
+PODS:
+  - SRNetworking (0.0.1)
+
+DEPENDENCIES:
+  - SRNetworking
+
+SPEC REPOS:
+  "git@github.com:sriramios/specs.git":
+    - SRNetworking
+
+SPEC CHECKSUMS:
+  SRNetworking: b1ceb43a4f859996661366d78c1e89b792eeba3d
+
+PODFILE CHECKSUM: bbbefd8a66a61572253401a23e48924463908d1c
+
+COCOAPODS: 1.8.4

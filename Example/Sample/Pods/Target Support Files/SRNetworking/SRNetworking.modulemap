@@ -1,0 +1,6 @@
+module SRNetworking {
+  umbrella header "SRNetworking-umbrella.h"
+
+  export *
+  module * { export * }
+}

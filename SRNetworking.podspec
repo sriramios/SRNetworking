@@ -26,7 +26,7 @@ Pod::Spec.new do |s|
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = "SRNetworking Library which helps to implement RESTFUL API implement in swift"
 
-  s.homepage     = "https://github.com/sriramios"
+  s.homepage     = "https://github.com/sriramios/SRNetworking"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
