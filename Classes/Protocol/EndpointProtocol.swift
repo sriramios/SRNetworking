@@ -30,7 +30,6 @@ public enum HTTPMethod: String {
 public protocol Endpoint {
     var Config: NetworkConfiguration { get }
     var urlComponents: URLComponents { get }// base url of the request
-    var gzipEnabled: Bool { get }
     var path: String? { get } // path component of the url
     var method: HTTPMethod? { get } // HTTP Method (e.g. GET, POST etc)
     var headers: HeaderParams? { get } // Header parameters
