@@ -14,6 +14,5 @@ public struct NetworkConfiguration {
     
     public init(base: String, token: String) {
         self.baseUrl = base
-        self.token = token
     }
 }
