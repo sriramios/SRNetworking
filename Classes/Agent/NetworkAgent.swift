@@ -98,4 +98,42 @@ public class NetworkAgent: NSObject {
         
         task.resume()
     }
+    
+    
+    //dataArrayRequest which sends request to given URL and convert to Array of Decodable Object
+    func dataArrayRequest<T: Codable>(with request: URLRequest?, objectType: T.Type, completion: @escaping (Result<[T]>) -> Void) {
+        
+        //create the session object
+        
+        guard let request = request else {
+            completion(Result.failure(APIError.invalidURL))
+            return  }
+        //create dataTask using the session object to send data to the server
+        let task = session.dataTask(with: request, completionHandler: { data, response, error in
+            
+            DispatchQueue.main.async {
+                guard error == nil else {
+                    completion(Result.failure(APIError.networkError(error!)))
+                    return
+                }
+                
+                guard let data = data else {
+                    completion(Result.failure(APIError.dataNotFound))
+                    return
+                }
+                
+                do {
+                    //create array of decodable object from Json Data
+                    let decodedObject = try JSONDecoder().decode(Array<T>.self, from: data)
+                    completion(Result.success(decodedObject))
+                    
+                } catch let error {
+                    completion(Result.failure(APIError.jsonParsingError(error as! DecodingError)))
+                }
+            }
+            
+        })
+        
+        task.resume()
+    }
 }
