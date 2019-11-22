@@ -68,4 +68,34 @@ public class NetworkAgent: NSObject {
         
         task.resume()
     }
+    
+    //image Request which sends request to given URL and convert to image
+    func imageDownloadRequest(with request: URL?, completion: @escaping (Result<UIImage>) -> Void) {
+        
+        //create the session object
+        
+        guard let request = request else {
+            completion(Result.failure(APIError.invalidURL))
+            return  }
+        //create dataTask using the session object to download image
+        let task = session.dataTask(with: request, completionHandler: { data, response, error in
+            
+            DispatchQueue.main.async {
+                guard error == nil else {
+                    completion(Result.failure(APIError.networkError(error!)))
+                    return
+                }
+                
+                guard let data = data,  let image = UIImage(data: data)  else {
+                    completion(Result.failure(APIError.dataNotFound))
+                    return
+                }
+                
+                completion(Result.success(image))
+            }
+            
+        })
+        
+        task.resume()
+    }
 }

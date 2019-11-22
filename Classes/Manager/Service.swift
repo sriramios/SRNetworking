@@ -22,5 +22,11 @@ public class APIService {
                 completionHandler(result)
         }
     }
+    
+    public func downloadImage(url: URL,  completionHandler: @escaping (Result <UIImage>) -> Void) {
+        agent.imageDownloadRequest(with: url) { (result) in
+            completionHandler(result)
+        }
+    }
 }
 
