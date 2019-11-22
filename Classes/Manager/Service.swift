@@ -23,6 +23,12 @@ public class APIService {
         }
     }
     
+    public func loadArray<T: Codable>(endpoint: Endpoint?, completionHandler: @escaping (Result <[T]>) -> Void) {
+        agent.dataArrayRequest(with: endpoint?.asURLrequest(), objectType: T.self) { (result: Result <[T]>) in
+            completionHandler(result)
+        }
+    }
+    
     public func downloadImage(url: URL,  completionHandler: @escaping (Result <UIImage>) -> Void) {
         agent.imageDownloadRequest(with: url) { (result) in
             completionHandler(result)
