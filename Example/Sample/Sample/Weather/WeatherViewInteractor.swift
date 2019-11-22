@@ -28,6 +28,7 @@ class WeatherViewInteractor: NSObject {
     }
     
     func makeAPICall(_ location: CLLocation) {
+        
         let webService = APIService.init()
         weak var weakSelf = self
         webService.load(endpoint: SampleRequest.getUserId(lat: "\(location.coordinate.latitude)",lon: "\(location.coordinate.longitude)") as Endpoint) { (result: Result<ForeCastInfo>) in
@@ -38,9 +39,21 @@ class WeatherViewInteractor: NSObject {
                 weakSelf?.output?.displayLocationInfo(location: todo)
             case .failure(let error):
                 print("Error \(error)")
-                
             }
         }
+    }
+    
+    func downloadImage() {
+        let webService = APIService.init()
+        webService.downloadImage(url: URL(string: "https://res.cloudinary.com/demo/image/upload/w_400,h_400,c_crop,g_face,r_max/w_200/lady.jpg")!) { (result: Result<UIImage>) in
+            switch result {
+            case .success :
+                print("Image downloaded")
+            case .failure(let error):
+                print("Error \(error)")
+            }
+        }
+
     }
     
 }

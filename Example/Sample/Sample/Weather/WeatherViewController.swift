@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class WeatherViewController: UIViewController {
 
     var interactor: WeatherViewInteractorInput?
     
@@ -20,12 +20,12 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        interactor?.getLocation()
+        interactor?.getLocation()        
     }
 
 }
 
-extension ViewController: WeatherViewInteractorOutput {
+extension WeatherViewController: WeatherViewInteractorOutput {
     func displayLocationInfo(location: ForeCastInfo) {
         print(location)
     }

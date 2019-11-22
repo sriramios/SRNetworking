@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		54CECF39F844BBB3FABCD916 /* libPods-Sample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 964855B8EA4A90E5F4DF2F3A /* libPods-Sample.a */; };
+		F650AD6323883FF80005EF46 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F695177A236855E000C85C63 /* WeatherViewController.swift */; };
 		F69517682368559100C85C63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69517672368559100C85C63 /* AppDelegate.swift */; };
 		F695176D2368559100C85C63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F695176B2368559100C85C63 /* Main.storyboard */; };
 		F695176F2368559300C85C63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F695176E2368559300C85C63 /* Assets.xcassets */; };
 		F69517722368559300C85C63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F69517702368559300C85C63 /* LaunchScreen.storyboard */; };
-		F6951781236855E000C85C63 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F695177A236855E000C85C63 /* WeatherViewController.swift */; };
 		F6951782236855E000C85C63 /* WeatherViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F695177B236855E000C85C63 /* WeatherViewInteractor.swift */; };
 		F6951783236855E000C85C63 /* ForeCastInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F695177E236855E000C85C63 /* ForeCastInfo.swift */; };
 		F6951784236855E000C85C63 /* SampleRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6951780236855E000C85C63 /* SampleRequest.swift */; };
@@ -238,7 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6951782236855E000C85C63 /* WeatherViewInteractor.swift in Sources */,
-				F6951781236855E000C85C63 /* WeatherViewController.swift in Sources */,
+				F650AD6323883FF80005EF46 /* WeatherViewController.swift in Sources */,
 				F69517872368650500C85C63 /* LocationManager.swift in Sources */,
 				F6951783236855E000C85C63 /* ForeCastInfo.swift in Sources */,
 				F69517682368559100C85C63 /* AppDelegate.swift in Sources */,
