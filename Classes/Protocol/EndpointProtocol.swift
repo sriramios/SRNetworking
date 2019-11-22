@@ -107,9 +107,7 @@ extension Endpoint {
         urlComponents.path = urlPath
         
         if let reqParams = self.queryParams {
-            let common = ["appid":Config.token]
             urlComponents.setQueryItems(with: reqParams)
-            urlComponents.setQueryItems(with: common)
         }
         
         var urlRequest = URLRequest(url: urlComponents.url!)
