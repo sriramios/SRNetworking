@@ -10,9 +10,8 @@ import Foundation
 
 public struct NetworkConfiguration {
     let baseUrl: String
-    let token: String
     
-    public init(base: String, token: String) {
+    public init(base: String) {
         self.baseUrl = base
     }
 }
